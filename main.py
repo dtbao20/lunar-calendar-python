@@ -48,9 +48,10 @@ class LICHAM(Fl_Window):
                 if (y+1)>len(cal): break
                 if cal[y][x].day==tt.day and cal[y][x].month==tt.month:
                     fl_color(25, 25, 25)
-                    fl_line_style(FL_DASH,2)
-                    fl_rect(x*dot,dot*(2+y), dot, dot)
+                    fl_line_style(FL_DASH,3)
+                    # fl_rect(x*dot,dot*(2+y), dot, dot)
                     # fl_circle(x*dot+0.5*dot,dot*(2+y)+0.5*dot,20)
+                    fl_circle(x*dot+0.5*dot,dot*(2+y)+0.5*dot,25)
 
 
 def CalMoon(tt):
