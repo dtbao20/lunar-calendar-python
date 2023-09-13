@@ -30,8 +30,9 @@ class LICHAM(Fl_Window):
         for x in range(6):
             fl_color(50, 50, 50)
             fl_line_style(FL_SOLID,1)
-            if x not in [4,5]: fl_line(dot*(x+1), dot+10, dot*(x+1), dot*2-10)
-            else: fl_line(dot*(x+1), dot+20, dot*(x+1), dot*2-10)
+            # if x not in [4,5]: fl_line(dot*(x+1), dot+10, dot*(x+1), dot*2-10)
+            # else: fl_line(dot*(x+1), dot+20, dot*(x+1), dot*2-10)
+            fl_line(dot*(x+1), dot+20, dot*(x+1), dot*2-0)
         ##
 
         # for x in range(6):
@@ -149,10 +150,13 @@ def addbox():
             k1.labelfont(FL_BOLD_ITALIC)
 
             if '/' in daymoon: 
-                k1_ = Fl_Box(dot*x+2*lm+2,dot*(y+2)+7,dot,dot,"/")
-                k1_.labelcolor(8*18+0)
-                k1_.labelsize(14)
-                k1_.labelfont(FL_BOLD_ITALIC)
+                k1.labelcolor(8*18+0)
+                k1.labelsize(12)
+                k1.labelfont(FL_BOLD_ITALIC)
+                # k1_ = Fl_Box(dot*x+2*lm+2,dot*(y+2)+7,dot,dot,"/")
+                # k1_.labelcolor(8*18+0)
+                # k1_.labelsize(14)
+                # k1_.labelfont(FL_BOLD_ITALIC)
             if cal[y][x].day==tt.day and cal[y][x].month==tt.month: 
                 # kk.color(42)
                 # kk.labelcolor(theme0[0])
