@@ -9,7 +9,7 @@ LIST_THANG = ['Tháng Giêng', 'Tháng Hai', 'Tháng Ba', 'Tháng Tư', 'Tháng 
 class LICHAM(Fl_Window):
     def __init__(self,x,y,w,h):
         super().__init__(x,y,w,h)
-        self.quote = "heloo!"
+        self.quote = "We are all alike, on the inside  --Mark Twain"
         self.col = 0
         Fl.add_timeout(0, self.addQuoteCallback, self.quote)
     def addQuoteCallback(self, dat):
@@ -18,7 +18,8 @@ class LICHAM(Fl_Window):
         # fl_color(148+int(3.8*sin(10*self.col*pi/180)))
         mcolor = -6*abs(sin(2*5*self.col*pi/180))**0.85+6
         # print(mcolor)
-        fl_color(144+8*0+int(mcolor))
+        fl_color(100,255,50)
+        fl_font(3,12)
         fl_draw(dat, 0, int(dot*0.75), dot*5, int(dot*0.46), FL_ALIGN_INSIDE+FL_ALIGN_LEFT)
         self.col+=1
         # Fl.repeat_timeout(1/30, self.addQuoteCallback, self.quote)
@@ -172,16 +173,12 @@ def addbox():
             t+=1
 dot = 50
 Fl.set_font(FL_TIMES_BOLD_ITALIC, 148)
+Fl.set_fonts("*")
 app=LICHAM(x=600,y=200,w=dot*7,h=dot*8)
 app.label("hi")
-app.default_icon(Fl_PNG_Image('images/afro.png'))
 
 app.box = Fl_Box(0,0,dot*7,dot*8)
-# pic = Fl_PNG_Image('images/bg5.png')
-# pic = Fl_JPEG_Image('images/bg10.jpg')
 pic = Fl_JPEG_Image('images/lucy.jpg')
-# pic = Fl_JPEG_Image('images/matth.jpg')
-# pic = Fl_JPEG_Image('images/prith.jpg')
 pic = pic.copy(int(app.box.h()*pic.w()/pic.h()), app.box.h())
 # pic = pic.copy(app.box.w(), int(app.box.w()*pic.h()/pic.w()))
 app.box.image(pic)
